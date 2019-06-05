@@ -1,0 +1,3 @@
+class Car():
+  def color(self):
+    print"This color is red"
