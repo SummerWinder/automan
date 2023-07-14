@@ -29,7 +29,7 @@ class httpHandler:
 
     #执行接口调用，0是get，1是post
     def run(self,method):
-        httpExcute = http.httpTools();
+        httpExcute = http.httpTools()
         httpExcute.set_url(self.host+self.path)
         httpExcute.set_headers(self.headers)
         httpExcute.set_data(json.dumps(self.data))
