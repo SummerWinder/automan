@@ -9,10 +9,10 @@ import Common.ImportTestCaseFromExcel as importCase
 
 if __name__ == '__main__':
     #更新接口
-    importApi.impotApi().readExcel()
+    # importApi.impotApi().readExcel()
     #更新用例
     #importCase.impotTestCase("/Users/zoudw/PycharmProjects/automan/TestFile/ZhangJunChao/AssistantKeyword1.xlsx","assistantapp").readExcel()
-    importCase.impotTestCase("/Users/zoudw/PycharmProjects/automan/TestFile/ZhangJunChao/AssistantKeyword2.xlsx","assistantapp").kwReadExcel()
+    # importCase.impotTestCase("/Users/zoudw/PycharmProjects/automan/TestFile/ZhangJunChao/AssistantKeyword2.xlsx","assistantapp").kwReadExcel()
     #执行用例
     repName = str(datetime.now().strftime("%Y%m%d%H%M%S"))
     alluredir = "report/" + repName

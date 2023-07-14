@@ -41,13 +41,12 @@ class httpTools:
     # defined http get method
     def get(self):
         try:
-            response = requests.get(self.url, params=self.params, data = self.data,headers=self.headers, timeout=float(timeout))
+            response = requests.get(self.url, params=self.params, data=self.data, headers=self.headers, timeout=float(timeout))
             # response.raise_for_status()
             self.logger.info("卡卡卡")
             return response
         except TimeoutError:
-            self.logger.error("Time out!")
-            return None
+            raise self.logger.error("Time out!")
 
     # defined http post method
     def post(self):
@@ -63,9 +62,9 @@ class httpTools:
 
 if __name__ == '__main__':
     http1 = httpTools()
-    http1.set_url("http://java.goodscenter.mng.turboradio.cn/spu/save")
-    http1.set_headers({"Content-Type":"application/json","Authorization":"Bearer ed9e5fd5-dd4a-4dba-80d0-3f861523a561"})
-    http1.set_json({"goodsType":"1","goodsSubType":"11","cateName":["12815"],"cateId":"12815","goodsName":"刘昊然测试1592314435","enName":None,"approvalNumber":"1592314435","dosage":None,"form":None,"manufacturer":None,"deleted":0,"id":None,"attrs":None})
-    http1.logger.info("请求ulr地址" + http1.url)
-
-    http1.logger.info("返回结果"+http1.get().text)
+    http1.set_url("https://pets.jckj928.cn/api/wanlshop/user/login")
+    http1.set_headers({"Content-Type": "application/json", 'User-Agent': 'Apifox/1.0.0 (https://apifox.com)'})
+    http1.set_data({"account": "u_lP9hcK", "password": "123456"})
+    # http1.logger.info("请求ulr地址" + http1.url)
+    # http1.logger.info("返回结果"+http1.post().text)
+    print(http1.post().text)
