@@ -6,6 +6,7 @@ import Common.JsonTools as jsonTools
 import Common.MysqlHandler as mysqlHandler
 import KeyWordDriver.CommonKeyWord as ckw
 from ApiLib.assistantapp import assistantappApi
+from ApiLib.pet_auction import pet_auctionApi
 
 def __defult(met, p, t):
     if p["header"].__len__() > 0:
@@ -14,8 +15,8 @@ def __defult(met, p, t):
         met.params = p["parma"]
     if p["data"].__len__() > 0:
         met.data = p["data"]
-    if p["env"].__len__() > 0:
-        met.changeEnv(p["env"])
+    # if p["env"].__len__() > 0:
+    #     met.changeEnv(p["env"])
     res = met.excute()
     if t == "text":
         return res.text
@@ -23,10 +24,6 @@ def __defult(met, p, t):
         return json.loads(res.text)
     if t == "code":
         return res.status_code
-
-
-if __name__ == '__main__':
-    pass
 
 def assistantappApi_UserLogin(p, t):
     met = assistantappApi.UserLogin()
@@ -195,14 +192,22 @@ def assistantappApi_WorkJob(p, t):
     met = assistantappApi.WorkJob()
     return __defult(met, p, t)
 def assistantappApi_WorkCancel(p, t):
-	met = assistantappApi.WorkCancel()
-	return __defult(met, p, t)
+    met = assistantappApi.WorkCancel()
+    return __defult(met, p, t)
 def assistantappApi_WorkAccept(p, t):
-	met = assistantappApi.WorkAccept()
-	return __defult(met, p, t)
+    met = assistantappApi.WorkAccept()
+    return __defult(met, p, t)
 def assistantappApi_WorkRecordCreate(p, t):
-	met = assistantappApi.WorkRecordCreate()
-	return __defult(met, p, t)
+    met = assistantappApi.WorkRecordCreate()
+    return __defult(met, p, t)
 def assistantappApi_WorkRecordComplete(p, t):
-	met = assistantappApi.WorkRecordComplete()
-	return __defult(met, p, t)
+    met = assistantappApi.WorkRecordComplete()
+    return __defult(met, p, t)
+
+def pet_auctionApi_UserLogin(p, t):
+    met = pet_auctionApi.UserLogin()
+    return __defult(met, p, t)
+
+
+if __name__ == '__main__':
+    pass

@@ -64,6 +64,7 @@ if __name__ == '__main__':
     http1 = httpTools()
     http1.set_url("https://pets.jckj928.cn/api/wanlshop/user/login")
     http1.set_headers({"Content-Type": "application/json", 'User-Agent': 'Apifox/1.0.0 (https://apifox.com)'})
+    http1.set_params({})
     http1.set_data({"account": "u_lP9hcK", "password": "123456"})
     # http1.logger.info("请求ulr地址" + http1.url)
     # http1.logger.info("返回结果"+http1.post().text)
