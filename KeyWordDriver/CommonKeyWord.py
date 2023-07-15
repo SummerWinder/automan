@@ -77,7 +77,7 @@ class CommonKeyWord:
 
     def Yaml_Read(self, path):
         f = open(path, "r", encoding="utf-8")
-        y = yaml.load(f.read())
+        y = yaml.load(f, Loader=yaml.FullLoader)
         f.close()
         return y
 
@@ -293,5 +293,6 @@ class CommonKeyWord:
 
 
 if __name__ == '__main__':
-    CommonKeyWord().Db_ConfRedisSet("test_redis","verifyCode_valid_18946788878","12345")
-    print(CommonKeyWord().Db_ConfRedisGet("test_redis","verifyCode_valid_18946788878"))
+    CommonKeyWord().Yaml_Read(path='D:\\automan\\TestFile\\ZhangJunChao\\zjctest.yaml')
+    # CommonKeyWord().Db_ConfRedisSet("test_redis","verifyCode_valid_18946788878","12345")
+    # print(CommonKeyWord().Db_ConfRedisGet("test_redis","verifyCode_valid_18946788878"))

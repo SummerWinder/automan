@@ -10,7 +10,7 @@ class Test_assistantapp:
 	@allure.severity("blocker")
 	def test_zjc_Customerinfo_001(self):
 		# 读取yaml文件
-		yamlFile = ckw.CommonKeyWord().Yaml_Read("/Users/zoudw/PycharmProjects/automan/testFile/ZhangJunChao/zjctest.yaml")
+		yamlFile = ckw.CommonKeyWord().Yaml_Read(r"D:\automan\TestFile\ZhangJunChao\zjctest.yaml")
 		# 读取yaml里手机号
 		mobile = ckw.CommonKeyWord().Yaml_GetByKey(yamlFile,"mobileAssistant")
 		# 读取Yaml执行环节
