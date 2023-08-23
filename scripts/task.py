@@ -1,6 +1,5 @@
 import datetime
-import time, threading
-from threading import Timer
+import time, threading_study as td, multiprocessing_study as mp
 
 """使用while循环做检测某个参数的变化"""
 
@@ -25,7 +24,7 @@ def task():
 
 
 def scheduled():
-    t = threading.Timer(2, task)
+    t = td.Timer(2, task)
     t.start()
 
 
